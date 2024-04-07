@@ -1,5 +1,5 @@
 // app.mjs
-import { getRandomQuote } from "./quotable_api.mjs";
+import { getRandomQuote, searchQuotes } from "./quotable_api.mjs";
 import { renderQuote, getCurrentDateTime } from "./helper.mjs";
 
 function displayDayDateTime() {
@@ -22,7 +22,30 @@ async function displayRandomQuote() {
     }
 }
 
-displayDayDateTime();
-displayRandomQuote();
-
-
+async function searchQuotesBySubject(subject) {
+    try {
+      const quotes = await searchQuotes(subject);
+      console.log("Search Results:", quotes);
+      const searchResultsElement = document.getElementById("searchResults");
+      searchResultsElement.innerHTML = "";
+      quotes.results.forEach(quote => {
+        const quoteElement = renderQuote(quote);
+        searchResultsElement.appendChild(quoteElement);
+      });
+    } catch (error) {
+      console.error("Error searching quotes:", error);
+    }
+  }
+  
+  displayDayDateTime();
+  displayRandomQuote();
+  
+  const searchInput = document.querySelector('input[name="quoteSearch"]');
+  const searchButton = document.querySelector('.searchBtn');
+  
+  searchButton.addEventListener('click', () => {
+    const subject = searchInput.value.trim();
+    if (subject !== '') {
+      searchQuotesBySubject(subject);
+    }
+  });

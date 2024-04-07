@@ -2,12 +2,14 @@
 export function renderQuote(quote) {
     const quoteElement = document.createElement("div");
     quoteElement.classList.add("quote");
-    quoteElement.textContent = `"${quote.content}" - ${quote.author}`;
+    quoteElement.innerHTML = `<span class='qod'>Random quote:</span><br>${quote.content}" - ${quote.author}`;
     return quoteElement;
 }
 
 // https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+
 export function getCurrentDateTime() {
     const today = new Date();
 
@@ -17,7 +19,7 @@ export function getCurrentDateTime() {
         hour12: true,
     };
     const strTime = today.toLocaleTimeString("en-US", options);
-    const formatTime = strTime.replace(":00", "");
+    const formatTime = strTime.includes(":00") ? strTime.replace(" ", "") : strTime.replace(":00", "");
 
     const dateOptions = {
         weekday: "long",
