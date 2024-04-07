@@ -2,7 +2,7 @@
 export function renderQuote(quote) {
     const quoteElement = document.createElement("div");
     quoteElement.classList.add("quote");
-    quoteElement.innerHTML = `<span class='qod'>Random quote:</span><br>${quote.content}" - ${quote.author}`;
+    quoteElement.innerHTML = `${quote.content}" - ${quote.author}`;
     return quoteElement;
 }
 

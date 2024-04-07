@@ -13,11 +13,17 @@
     <h1 class="title">Fresh Perspective</h1>
   </div>
   <div id="greetingDate"></div>
-  <div id="quoteContainer"></div>
+  <div class="randomContainer">
+    <h3 class="randomTitle">Random quote:</h3>
+    <div id="quoteContainer"></div>
+  </div>
   <div id="searchContainer">
-    <p class="lblInput"><label for="quoteSearch">Search by topic:</label></p>
-    <input type="text" name="quoteSearch" placeholder="Example: motivation, happiness">
+    <p class="lblInput"><label for="quoteSearch">Search quotes by topic:</label></p>
+    <input type="text" name="quoteSearch" placeholder="Example: motivation, happiness, history, technology">
     <button class="searchBtn">Search</button>
+    <p class="lblInput"><label for="authorSearch">Search quotes by author:</label></p>
+    <input type="text" name="authorSearch" placeholder="Example: Albert Einstein, Maya Angelou, Mark Twain">
+    <button class="searchAuthorBtn">Search</button>
   </div>
   <div id="searchResults"></div>
   <script src="app.mjs" type="module" async defer></script>

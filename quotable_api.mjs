@@ -22,6 +22,10 @@ export async function listQuotes(page = 1, limit = 10) {
   return fetchData(`/quotes?page=${page}&limit=${limit}`);
 }
 
+export async function listQuotesByAuthor(authorName, page = 1, limit = 10) {
+  return fetchData(`/quotes?author=${encodeURIComponent(authorName)}&page=${page}&limit=${limit}`);
+}
+
 export async function getQuoteById(id) {
   return fetchData(`/quotes/${id}`);
 }

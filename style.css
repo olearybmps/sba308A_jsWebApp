@@ -43,15 +43,19 @@ body {
     font-size: 24px;
     margin-top: 20px;
   }
-  
-  #quoteContainer {
+
+  .randomContainer {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    /* background-color: #fff; */
     background-color: #5cb25d;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .randomContainer h3 {
+    margin: 0;
+    padding: 0;
   }
   
   .quote {
@@ -85,7 +89,7 @@ body {
     width: 75%;
   }
   
-  .searchBtn {
+  .searchBtn, .searchAuthorBtn {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #0f9015;
