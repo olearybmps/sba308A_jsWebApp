@@ -35,7 +35,7 @@ async function searchQuotesBySubject(subject) {
       searchResultsElement.innerHTML = "";
   
       if (quotes.count === 0) {
-        searchResultsElement.textContent = "No results found for the given subject. Please try again with a different subject.";
+        searchResultsElement.textContent = "No results found for this subject. Please try again with a different subject.";
       } else {
         quotes.results.forEach(quote => {
           const quoteElement = renderQuote(quote);
@@ -55,7 +55,7 @@ async function searchQuotesBySubject(subject) {
       searchResultsElement.innerHTML = "";
   
       if (quotes.count === 0) {
-        searchResultsElement.textContent = "No quotes found for the given author. Please try again with a different author name.";
+        searchResultsElement.textContent = "No quotes found for this author. Please try again with a different author name.";
       } else {
         quotes.results.forEach(quote => {
           const quoteElement = renderQuote(quote);
